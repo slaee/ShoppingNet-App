@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.Home"
+	xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    android:TabbedPage.ToolbarPlacement ="Bottom"
+    android:TabbedPage.BarItemColor="#4c4c4c"
+    android:TabbedPage.BarSelectedItemColor="Red"
+    android:TabbedPage.IsSmoothScrollEnabled="false"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    BarBackgroundColor="white"
+    NavigationPage.HasNavigationBar="false">
+    <TabbedPage.Children>
+	    <NavigationPage NavigationPage.HasNavigationBar="false" BarBackgroundColor="#ffc000" Title="Pasugo-A Ko" BarTextColor="#4c4c4c"
+            IconImageSource="img/delivery.png">
+            <x:Arguments>
+                <local:PaSugoAKoPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage NavigationPage.HasNavigationBar="false" BarTextColor="#4c4c4c" BarBackgroundColor="white" Title="Home"
+            IconImageSource="img/tab_home.png">
+            <x:Arguments>
+                <local:HomePage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage NavigationPage.HasNavigationBar="false" BarTextColor="white"  BarBackgroundColor="#ff4949" Title="My account"
+            IconImageSource="img/user.png">
+            <x:Arguments>
+                <local:AccountPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

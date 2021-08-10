@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.SplashScreen"
+	BackgroundColor="white"
+	NavigationPage.HasNavigationBar="false">
+	<ContentPage.Content>
+	    <StackLayout VerticalOptions="CenterAndExpand">
+	        <Image Source="img/logo.jpg"/>
+	        <Label x:Name="label" Text=""/>
+	    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

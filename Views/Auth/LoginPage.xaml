@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Auth"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Auth.LoginPage"
+	BackgroundColor="white"
+	NavigationPage.HasNavigationBar="false">
+	<ContentPage.Content>
+	    <ScrollView>
+            <Grid>
+	            <StackLayout Padding="10" Margin="0,-350,0,0" >
+		            <Image Source="img/logo.jpg" 
+			   VerticalOptions="CenterAndExpand" />
+		        </StackLayout>
+		        <StackLayout Padding="10" Margin="10,330,10,0" >
+			        <Label Text ="Email" TextColor="Black"/>
+				    <Frame Padding ="3" OutlineColor ="#ff4949" BackgroundColor = "White">
+					    <Entry Margin= "10,0,10,0" Text ="{Binding Email}" Placeholder="" PlaceholderColor = "#C4C4C4" TextColor = "Black"/>
+				    </Frame>
+					<Label Text ="Password" TextColor="Black"/>
+					<Frame Padding = "3" OutlineColor ="#ff4949" BackgroundColor = "White">
+						<Entry Margin= "10,0,10,0" Text ="{Binding Password}" Placeholder="" IsPassword = "True" TextColor="Black" PlaceholderColor = "#C4C4C4"/>
+					</Frame>
+		        </StackLayout>
+		        <StackLayout  Margin="100,520,100,0" >
+		        	<Button Text ="Login" BackgroundColor="#ee3533" TextColor = "White" Clicked ="OnClickedLogin"/>
+		        </StackLayout>
+		        <StackLayout Margin="100,570,100,0" >
+			        <Button Text ="Sign Up" TextColor = "Red" BackgroundColor = "White" Clicked = "OnClickedSignUp"/>
+			        <Label Text = "Sly Copyright © 2020" VerticalOptions ="EndAndExpand" HorizontalOptions ="CenterAndExpand" TextColor = "Black"/>
+                    <ContentView x:Name="overlay" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="False" BackgroundColor="Transparent" Padding="20, 0">
+		                <ProgressBar x:Name="progressBar" ProgressColor="Red" VerticalOptions="Center" />
+			        </ContentView>
+		        </StackLayout>
+		    </Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

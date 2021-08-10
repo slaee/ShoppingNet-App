@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.CustomRenderer"
+	xmlns:models="clr-namespace:Shop.ViewModel"
+	x:Name="This"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.AccountPage"
+	BackgroundColor="#fbfbfb"
+	Title="My Account">
+    <ContentPage.ToolbarItems>
+        <local:HideToolbarItem x:Name="edit" Priority="1" Clicked="OnClickedEdit" Parent="{x:Reference This}" IconImageSource="assets/img/edit.png"/>
+        <local:HideToolbarItem x:Name="save" Text="Save" Priority="0" Clicked="OnClickedSave" Parent="{x:Reference This}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+	    <models:CarouselImage/>
+	</ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout>
+                    <Frame BackgroundColor="#ff4949" HeightRequest="160" CornerRadius="0">
+                        <StackLayout>
+                            <Frame Margin="110,0,110,0" Padding="0" CornerRadius="50">
+                                <Image HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="100" Source="img/Sly.jpg"/>
+                            </Frame>
+                            <Label Text="Sly Bacalso" TextColor="white" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" />
+                            <Label Text="nasa.sly14@gmail.com" TextColor="#cccccc" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="50,200,50,0" Padding="20">
+                    <Label Text="____________My  Badge____________" TextColor="Black" FontAttributes="bold"/>
+                    <Frame Margin="0,-5,0,0" Padding="0" BackgroundColor="#5d5d5d">
+                        <Label Text="Software Engineer" TextColor="White" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    </Frame>
+                    <Label Margin="5,-20,0,0" Text="_________________________________" TextColor="Black" FontAttributes="bold"/>
+                </StackLayout>
+                <StackLayout Margin="10,290,10,0">
+                    <Label Text="My Purchase History" TextColor="gray" FontSize="15" FontAttributes="Bold"/>
+                    <Frame Padding="5" HasShadow="true">
+                        <StackLayout HeightRequest="200">
+                            <CarouselView x:Name="history"  ItemsSource="{Binding CarouselImageDatas}" HeightRequest="200" PeekAreaInsets="70">
+	                        <CarouselView.ItemTemplate>
+	                            <DataTemplate>
+	                                <StackLayout>
+	                                    <Frame  Margin="8" HasShadow="True" HeightRequest="150" CornerRadius="10" VerticalOptions="CenterAndExpand">
+	                                        <StackLayout>
+	                                            <ImageButton Source="{Binding ImageUrl}" />
+	                                            <Label Text="Cebu sugo-A Ko" TextColor="gray" FontSize="10"/>
+	                                        </StackLayout>
+	                                    </Frame>
+	                       
+	                               </StackLayout>
+	                            </DataTemplate>
+	                        </CarouselView.ItemTemplate>
+	                    </CarouselView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="10,550,10,0">
+                    <Label Text="Most Recent" TextColor="gray" FontSize="15" FontAttributes="Bold"/>
+                    <Frame HasShadow="true">
+                        <StackLayout>
+                            <Label Text="//under construction" TextColor="gray"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="10,650,10,0">
+                    <Label Text="My Info" TextColor="gray" FontSize="15" FontAttributes="Bold"/>
+                    <Frame HasShadow="true">
+                        <StackLayout>
+                            <Frame HeightRequest="40" Padding="0" BorderColor="Orange">
+                                <StackLayout>
+                                    <Label x:Name="age" Margin="190,10,0,0" Text="18" TextColor="#5d5d5d" IsVisible="true" />
+                                    <Entry x:Name="age1" Placeholder="Your Age" PlaceholderColor="gray" TextColor="Black" FontSize="15" IsVisible="false"/>
+                                    <Frame x:Name="age2" Margin="0,-45,200,0" BackgroundColor="orange" IsVisible="true">
+                                        <Label Text="Age" TextColor="White" HorizontalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Margin="0,10,0,0" HeightRequest="40" Padding="0" BorderColor="Orange">
+                                <StackLayout>
+                                    <Label x:Name="address" Margin="130,10,0,0" Text="Sitio Heart ng Crush Ko" TextColor="#5d5d5d"  IsVisible="true"/>
+                                    <Entry x:Name="address1"  Placeholder="Complete Address" PlaceholderColor="gray" TextColor="Black" FontSize="15" IsVisible="false"/>
+                                    <Frame x:Name="address2" Margin="0,-45,200,0" BackgroundColor="orange" IsVisible="true">
+                                        <Label Text="Address" TextColor="White" HorizontalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Margin="0,10,0,0" HeightRequest="40" Padding="0" BorderColor="Orange">
+                                <StackLayout>
+                                    <Label x:Name="phoneNumber" Margin="150,10,0,0" Text="0922Tu-olangNako" TextColor="#5d5d5d" IsVisible="true" />
+                                    <Entry x:Name="phoneNumber1"  Placeholder="PhoneNumber" PlaceholderColor="gray" TextColor="Black" FontSize="15" IsVisible="false"/>
+                                    <Frame x:Name="phoneNumber2" Margin="0,-42,200,0" BackgroundColor="orange" IsVisible="true">
+                                        <Label Text="Phone No." TextColor="White" FontSize="10" HorizontalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.Cart"
+	Title="My Cart"
+	BackgroundColor="white">
+	<ContentPage.Content>
+	    <ScrollView>
+	        <Grid>
+	            <StackLayout Padding="10">
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="Print the Item name, item image, how many stock of the item he/order" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="display some discription" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="Partial Payment" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout Margin="0,300,0,0">
+	                    <Frame Padding="0">
+	                        <Button Text="Check out" BackgroundColor="#ff4949" Clicked="OnClickCheckout"/>
+	                    </Frame>
+	                </StackLayout>
+	            </StackLayout>
+	        </Grid>
+	    </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

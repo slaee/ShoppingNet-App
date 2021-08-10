@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.PaSugoAKoPage"
+	BackgroundColor="white"
+	Title="Pasugo-A Ko">
+	<ContentPage.Content>
+	    <ScrollView>
+	        <Grid>
+	            <StackLayout>
+	                <Frame Padding="0" BackgroundColor="#ffc000" HeightRequest="300">
+	                    <Image HeightRequest="400" Source="img/pasugoakodo.jpg"/>
+	                </Frame>
+	            </StackLayout>
+	            <StackLayout>
+	                <Frame  Margin="10,310,10,0" Padding="0" BorderColor="#9a9c9c" CornerRadius="10" HeightRequest="500">
+	                    <StackLayout>
+	                    <SearchBar x:Name="searchBar" TextColor="black" Placeholder="Search near Available Ships" PlaceholderColor="gray" HorizontalTextAlignment="Start" TextChanged="OnTextChanged"/>
+	                
+	                    <ListView x:Name="searchResults"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="CenterAndExpand">
+	                        
+	                    </ListView>
+                  </StackLayout>
+                  </Frame>
+	            </StackLayout>
+	        </Grid>
+	    </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

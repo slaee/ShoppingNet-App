@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:model="clr-namespace:Shop.ViewModel"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.HomePage"
+	BackgroundColor="white"
+	Title="Home">
+	<ContentPage.ToolbarItems>
+	    <ToolbarItem x:Name="MenuItem" Priority="1" Clicked="OnClickedCart" IconImageSource="img/shopcart.png"/>
+	    <ToolbarItem Priority="0" Clicked="OnClickedSearch" IconImageSource="img/shopsearch.png"/>
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.BindingContext>
+	    <model:CarouselImage/>
+	</ContentPage.BindingContext>
+	<ContentPage.Content>
+	    <AbsoluteLayout>
+	    <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="SizeProportional">
+	        <Grid>
+	            <StackLayout>
+	                <CarouselView x:Name="Automatic" Margin="0,0,0,0" HeightRequest="260" ItemsSource="{Binding CarouselImageDatas}">
+	                    <CarouselView.ItemTemplate>
+	                        <DataTemplate>
+	                            <StackLayout Margin="0,-400,0,0">
+	                                <StackLayout>
+	                                     <Image Source="{Binding ImageUrl}"/>
+	                                </StackLayout>
+	                            </StackLayout>
+	                        </DataTemplate>
+	                    </CarouselView.ItemTemplate>
+	                </CarouselView>
+	                <StackLayout>
+	                    <Frame Margin="120,20,120,0" Padding="0" CornerRadius="10"  BackgroundColor="Orange">
+	                    <StackLayout>
+	                             <Label Margin="10,0,10,0" Text="Categories" TextColor="white" FontSize="20" FontAttributes="Bold" />
+	                        </StackLayout>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <CarouselView x:Name="categories"  ItemsSource="{Binding CarouselImageDatas}" HeightRequest="200" PeekAreaInsets="80">
+	                        <CarouselView.ItemTemplate>
+	                            <DataTemplate>
+	                                <StackLayout>
+	                                    <Frame BorderColor="#dddddd" Margin="8" HasShadow="True" HeightRequest="150" CornerRadius="20" VerticalOptions="CenterAndExpand">
+	                                        <StackLayout>
+	                                            <ImageButton Clicked="OnClickedCategory" Source="{Binding ImageUrl}" />
+	                                        </StackLayout>
+	                                    </Frame>
+	                       
+	                               </StackLayout>
+	                            </DataTemplate>
+	                        </CarouselView.ItemTemplate>
+	                    </CarouselView>
+	                </StackLayout>
+	                <StackLayout>
+	                    <Frame Margin="125,0,125,0" Padding="0" CornerRadius="10"  BackgroundColor="#ff4949">
+	                    <StackLayout>
+	                             <Label Margin="10,0,10,0" Text="Hot Sales" TextColor="white" FontSize="20" FontAttributes="Bold" />
+	                        </StackLayout>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <CarouselView x:Name="hotsale" ItemsSource="{Binding CarouselImageDatas}" Margin="0,0,0,0" HeightRequest="250" PeekAreaInsets="80">
+	                        
+	                        <CarouselView.ItemTemplate>
+	                            <DataTemplate>
+	                                <StackLayout>
+	                                   <Frame Padding="10" BorderColor="#dddddd" Margin="8" HasShadow="True" HeightRequest="200" CornerRadius="20" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand">
+	                                        <StackLayout>
+	                                            <ImageButton HeightRequest="140" Clicked="OnClickedHotProduct" Source="{Binding ImageUrl}" />
+	                                            <Label Text="Cebu Sugo-A Ko" TextColor="Black" FontSize="10" FontAttributes="bold" HorizontalOptions="Center"/>
+	                                            <Label Margin="10,0,0,0" Text="P50,000" TextColor="Black" FontAttributes="bold" FontSize="15"/>
+	                                            <ImageButton Padding="0" Margin="90,-35,0,0" BackgroundColor="Transparent" HeightRequest="65" Clicked="OnClickedBuyNow" Source="img/buynow.png"/>
+	                                            <Label Margin="10,-40,0,0" Text="Ratings 5.0" TextColor="#ffba00" FontAttributes="Bold" FontSize="10"/>
+	                                            </StackLayout>
+	                                    </Frame> 
+	                                </StackLayout>
+	                            </DataTemplate>
+	                        </CarouselView.ItemTemplate>
+	                    </CarouselView>
+	                </StackLayout>
+	            </StackLayout>
+	                  
+	        </Grid>
+	    </ScrollView>
+	        <ContentView x:Name="overlay" AbsoluteLayout.LayoutBounds="0.05, 1, 360, 10" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="False" BackgroundColor="#eeeeee" Padding="5,0,5,0" WidthRequest="150">
+	                        <ProgressBar x:Name="progressBar" ProgressColor="Red" VerticalOptions="Center"/>
+	        </ContentView>
+	    </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

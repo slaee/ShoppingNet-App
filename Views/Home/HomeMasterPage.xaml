@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.HomeMasterPage"
+	NavigationPage.HasNavigationBar="false">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" x:Name="masterPage" BackgroundColor="White">
+	    	<ScrollView>
+		        <Grid>
+			        <StackLayout>
+				        <Frame BackgroundColor="#ff4949" HeightRequest="100">
+					        <StackLayout>
+					            <Label Margin="80,30,0,0" Text="Sly Bacalso" FontSize="20" TextColor="White" FontAttributes="Bold"/>
+					            <Label Margin="80,0,0,0" Text="nasa.sly14@gmail.com"/>
+					        </StackLayout>
+    				    </Frame>
+    				    <Frame Padding="0" Margin="10,-115, 210,0" CornerRadius="50">
+    				        <Image HeightRequest="75" Source="img/logo.jpg"/>
+    				    </Frame>
+			        </StackLayout>
+			        <StackLayout Margin="0,140,0,0">
+			            <Frame Padding="0" HeightRequest="170">
+			                <StackLayout Margin="10,10,10,0">
+			                    <Button Margin="-15,0,10,0" Text="Rate Us" TextColor="#4c4c4c" BackgroundColor="white"/>
+			                    <Button Margin="0,0,10,0" Text="Feedback" TextColor="#4c4c4c" BackgroundColor="white"/>
+			                    <Button Text="Report a Problem" TextColor="#4c4c4c" BackgroundColor="white"/>
+			                </StackLayout>
+			            </Frame>
+			            <StackLayout Margin="30,-155,200,0">
+			                <Image HeightRequest="25" Source="img/star_icon.png" />
+			            </StackLayout>
+			            <StackLayout Margin="30,20,200,0">
+			                <Image HeightRequest="30" Source="img/feedback.png" />
+			            </StackLayout>
+			        </StackLayout>
+			        <StackLayout Margin="10,330,10,0">
+			            <Label Margin="10,0,0,0" Text=" Other Categories" TextColor="gray" FontAttributes="Bold"/>
+			            <Button Margin="-50,0,0,0" BackgroundColor="white" Text="Electronic Devices" TextColor="#4c4c4c" />
+			            <Button Margin="-20,0,0,0" BackgroundColor="white" Text="Electronic Accesories" TextColor="#4c4c4c"/>
+			            <Button Margin="-65,0,0,0" BackgroundColor="white" Text="Women Apparel's" TextColor="#4c4c4c"/>
+			            <Button Margin="-85,0,0,0" BackgroundColor="white" Text="Men Apparel's" TextColor="#4c4c4c"/>
+			            <Button Margin="-140,0,0,0" BackgroundColor="white" Text="Brand" TextColor="#4c4c4c"/>
+			            <Button Margin="-40,0,0,0" BackgroundColor="white" Text="Groceries and More" TextColor="#4c4c4c"/>
+			            <Button Padding="10" Text="Explore" TextColor="White" BackgroundColor="#008566"/>
+			            <StackLayout Margin="-10,0,-10,0">
+			                <Frame BackgroundColor="#0f0f0f" CornerRadius="0">
+			                    <StackLayout>
+			                        <Label Text="Please Follow us on Instagram"/>
+			                    </StackLayout>
+			                </Frame>
+			            </StackLayout>
+			        </StackLayout>
+		        </Grid>
+		    </ScrollView>
+	    </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Home/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

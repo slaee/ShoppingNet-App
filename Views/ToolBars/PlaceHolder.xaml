@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.PlaceHolder"
+	BackgroundColor="white"
+	Title="Place Order">
+	<ContentPage.Content>
+	    <ScrollView>
+	        <Grid>
+	            <StackLayout Padding="10">
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="List of Ships here" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="Calculation of location user and the ship" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout>
+	                    <Frame HasShadow="true">
+	                        <Label Text="Final Total Payment" TextColor="gray"/>
+	                    </Frame>
+	                </StackLayout>
+	                <StackLayout Margin="0,330,0,0">
+	                    <Frame Padding="0" HasShadow="true">
+	                        <Button Text="Place Order" BackgroundColor="gold" Clicked="OnPlaceOrder"/>
+	                    </Frame>
+	                </StackLayout>
+	            </StackLayout>
+	        </Grid>
+	    </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

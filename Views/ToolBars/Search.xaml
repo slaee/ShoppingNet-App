@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:Shop.Views"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Shop.Views.Search"
+	NavigationPage.HasNavigationBar="false"
+	BackgroundColor="white">
+	<ContentPage.Content>
+	    <StackLayout>
+        <SearchBar x:Name="searchBar"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="40,5,0,0"
+                   Placeholder="Search item"
+                   CancelButtonColor="Red"
+                   TextColor="black"
+                   PlaceholderColor="gray"
+                   HorizontalTextAlignment="Start"
+                   TextChanged="OnTextChanged"/>
+        <ImageButton x:Name="BackArrow" Margin="-5,-50,300,0" HeightRequest="35" BackgroundColor="white" Clicked="OnClicked" Source="img/back.png"/>
+        <ListView x:Name="searchResults"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="CenterAndExpand" ItemTapped="OnTapped" SelectionMode="None"/>
+    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
